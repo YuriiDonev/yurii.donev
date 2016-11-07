@@ -7,11 +7,10 @@
 <body>
 
 	<p> Здесь начало документа </p>
-А вот и Я
 		<!--   <script src="file1.js"></script> -->
 		
 		<script> 
-		var admin = prompt('Кто пришел?', 'Введите кто пришел:');
+		/*var admin = prompt('Кто пришел?', 'Введите кто пришел:');
 		if (admin == 'escape' || admin == null) {
 		alert('Вход отменен 1');
 		} else if (admin != 'Админ') {
@@ -25,10 +24,7 @@
 			alert('Пароль неверен')
 			} else if (password == 'Черный властелин') {
 			alert('Добро пожаловать');
-			}
-		
-		
-		
+			} */		
 		/*	if (password == null) {
 			alert('Вход отменен');
 			} if else (password == 'Черный властелин') {
@@ -36,9 +32,7 @@
 			} if else (password != 'Черный властелин') {
 			alert('Пароль неверен!')
 			}
-		}  */
-
-		
+		}  */	
 /*		} else if (admin == 'Админ') {
 			var password = prompt('Введите пароль', 'Введите здесь пароль:');
 			 if (password == 'escape' ) {
@@ -47,7 +41,31 @@
 			 alert('Пароль неверен!');
 			 } else (password != 'Черный властелин') {
 			 alert('Пароль неверен');
-			 }  */
+			 }  */		
+			 
+	//	var string = 'второй пример';		
+	//	alert(string.split('').reverse());	
+
+	/* Генерация случайного числа от min до max
+	function rand (min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+	}   */
+		
+	function rand (min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+		
+		var arr = [];
+		
+		for (var i = 0; i < 10; i++) {	
+		arr.push(rand(0, 100));
+		}
+		console.log(arr);
+		
+		for (var i = arr.length-1; i >= 0; i--) {
+			console.log(arr[i]);
+		}
+		
 		
 		</script>
 		

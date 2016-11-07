@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Learning</title>
+<meta charset="UTF-8" />
+</head>
+
+<body>
+<p>JS1</p>
+<script>
+
+// ДЗ
+// 1. создать массив на 30 элементов, заполнить случайными числами,
+// причем четные элементы заполнить числами больше нуля
+// а нечетные - меньше нуля. (подсказка - % это остаток от деления)
+// [-33, 55, -9, 48, -2, 1]
+// 2. Этот массив пройти циклом и вывести каждый пятый элемент  */
+	
+	function rand (min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+	var arr = [];
+	
+	for (var i = 0; i < 30; i++) {	
+			if (i%2) {
+				var even = rand(-100, -1);
+				arr.push(even);
+			} else {
+				var odd = rand(0, 100);
+				arr.push(odd);
+			}
+	}
+	for (var i = 0; i < arr.length; i=i+5) {
+		console.log(arr[i]);
+	}
+	
+	
+	
+	
+	
+	
+</script> 
+<p>JS2</p>
+
+
+
+
+</body>
+</html>
