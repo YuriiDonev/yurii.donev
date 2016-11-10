@@ -50,7 +50,7 @@
 	function rand (min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 	}   */
-		
+	/*	
 	function rand (min, max) {
 		return Math.floor(Math.random() * (max - min)) + min;
 	}
@@ -64,7 +64,38 @@
 		
 		for (var i = arr.length-1; i >= 0; i--) {
 			console.log(arr[i]);
+		}  */
+		
+			function rand (min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;	}
+	
+		var arr = [];
+		var ARR_SIZE = 10;
+		var ARR_SIZE_inside = 5;
+		
+		
+		for (var i = 0; i < ARR_SIZE; i++) {
+			arr[i] = [];
+				for (var j = 0; j < ARR_SIZE_inside; j++) {
+					arr[i][j] = rand(0, 100);
+				}
 		}
+		
+		console.table(arr);
+		
+/*		for (var i = arr.length-1; i < ARR_SIZE; i++) { // выводит последнюю строку массива
+			for (var j = 0; j < ARR_SIZE_inside; j++) {
+				console.log(arr[i][j]);
+			}
+		}     */
+		
+		for (var i = 0; i < 1; i++) {  // выводит первую строку массива
+			for (var j = 0; j < ARR_SIZE_inside; j++) {
+				console.log(arr[i][j]);
+			}
+		}
+		
+		
 		
 		
 		</script>

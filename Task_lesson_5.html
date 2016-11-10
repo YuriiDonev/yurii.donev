@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+<meta charset="UTF-8" />
+</head>
+
+<body>
+<p>JS1</p>
+<script>
+
+	// Решение только с помощью циклов
+
+	function rand (min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+	var arr = [];
+	var ARR_SIZE = 10;
+	var ARR_INSIDE_SIZE = 5;
+	
+		for (var i = 0; i < ARR_SIZE; i++) {
+			arr.push([i]);
+				for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+					arr[i][j] = rand (0, 100);  // заполняем массив
+				}
+		}		
+				console.table(arr); // выводим массив arr в виде таблицы
+	var arrTop = [];
+		for (var i = 0; i < 1; i++) {
+			for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+				arrTop.push(arr[i][j]);  // получаем верхний ряд массива
+			}
+		}
+	var arrRight = [];
+		for (var i = 1; i < ARR_SIZE-1; i++ ) {
+			for (var j = ARR_INSIDE_SIZE-1; j < ARR_INSIDE_SIZE; j++) {
+				arrRight.push(arr[i][j]); // получаем правую часть массива без верхнего и нижнего значения
+			}
+		}
+	var arrBottom = [];
+		for (var i = ARR_SIZE-1; i < ARR_SIZE; i++) {
+			for (var j = ARR_INSIDE_SIZE-1; j >= 0; j--) {
+				arrBottom.push(arr[i][j]); // получаем нижний ряд массива справа-налево
+			}
+		}
+	var arrLeft = [];
+		for (var i = ARR_SIZE-2; i > 0; i--) {
+			for (var j = 0; j < 1; j++) {
+				arrLeft.push(arr[i][j]); // получаем левый ряд снизу вверх без нижнего и верхнего значения
+			}
+		}
+	console.log(arrTop.concat(arrRight, arrBottom, arrLeft));
+	
+	//-----------------------------------------------------------------------------------------------
+/*	
+	// Решение с помощью циклов и методов concat, reverse
+	
+	function rand (min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+	
+	var arr = [];
+	var ARR_SIZE = 10;
+	var ARR_INSIDE_SIZE = 5;
+	
+	for (var i = 0; i < ARR_SIZE; i++) {
+		arr.push([i]);
+			for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+				arr[i][j] = rand (0, 100);
+			}
+	}
+	console.table(arr); // вывели массив в виде таблицы
+	
+	var arrTop = [];
+		for (var i = 0; i < 1; i++ ) {
+			for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+				arrTop.push(arr[i][j]); // получили верхний ряд массива
+			}
+		}
+	var arrRight = [];
+		for (var i = 1; i < ARR_SIZE-1; i++) {
+			for (var j = ARR_INSIDE_SIZE-1; j < ARR_INSIDE_SIZE; j++ ) {
+				arrRight.push(arr[i][j]); // получили правый ряд массива сверху вниз
+			}
+		}
+	var arrBottom = [];
+		for (var i = ARR_SIZE-1; i < ARR_SIZE; i++) {
+			for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+				arrBottom.push(arr[i][j]); // получили нижний ряд массива
+			}
+		}
+	var arrLeft = [];
+		for (var i = 1; i < ARR_SIZE-1; i++) {
+			for (var j = 0; j < 1; j++) {
+				arrLeft.push(arr[i][j]); // получили левый ряд массива сверху вниз
+			}
+		}
+	console.log(arrTop.concat(arrRight, arrBottom.reverse(), arrLeft.reverse()));
+
+	*/
+	
+</script> 
+<p>JS2</p>
+
+</body>
+</html>
