@@ -65,36 +65,61 @@
 		for (var i = arr.length-1; i >= 0; i--) {
 			console.log(arr[i]);
 		}  */
-		
-			function rand (min, max) {
-		return Math.floor(Math.random() * (max - min)) + min;	}
-	
-		var arr = [];
-		var ARR_SIZE = 10;
-		var ARR_SIZE_inside = 5;
-		
-		
-		for (var i = 0; i < ARR_SIZE; i++) {
-			arr[i] = [];
-				for (var j = 0; j < ARR_SIZE_inside; j++) {
-					arr[i][j] = rand(0, 100);
+
+/*Создайте функцию filterRangeInPlace(arr, a, b), которая получает массив с числами arr
+и удаляет из него все числа вне диапазона a..b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+Функция должна менять сам массив и ничего не возвращать.
+
+Например:
+
+arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+alert( arr ); // массив изменился: остались [3, 1] 
+
+		function filterRangeInPlace(arr, a, b) {
+			var arr;
+			var value;
+				for (var i = 0; i < arr.length; i++) {
+					value = arr[i];
+					if ( value < a || value > b ) {
+						arr.splice(i--, 1);
+					}
 				}
 		}
+		arr = [5, 3, 8, 1];
+		filterRangeInPlace(arr, 1, 4);
+		alert (arr);  */
 		
-		console.table(arr);
-		
-/*		for (var i = arr.length-1; i < ARR_SIZE; i++) { // выводит последнюю строку массива
-			for (var j = 0; j < ARR_SIZE_inside; j++) {
-				console.log(arr[i][j]);
+/*		var arr = [1, 2, 3, 4,];
+		var value = 4;
+		var resArr = [];
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] === value) {
+					console.log(i); break;
+				} else resArr.push(arr[i]);
 			}
-		}     */
+				if (arr.length === resArr.length) {
+					console.log('-1');
+				}  */
+				
+				
 		
-		for (var i = 0; i < 1; i++) {  // выводит первую строку массива
-			for (var j = 0; j < ARR_SIZE_inside; j++) {
-				console.log(arr[i][j]);
+		
+
+
+
+	
+	/*			var arr = [1, 2, 3, 4,];
+		var value = 3;
+		var notFound;
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] === value) {
+					console.log(i); break;
+				} else console.log('-1');
 			}
-		}
-		
+	*/	
 		
 		
 		

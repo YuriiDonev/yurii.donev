@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+<meta charset="UTF-8" />
+</head>
+
+<body>
+<p>---</p>
+<script>
+			
+		function rand (min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+		
+		var arr = [];
+		var ARR_SIZE = 10;
+		var ARR_INSIDE_SIZE = ARR_SIZE;
+		
+			for (var i = 0; i < ARR_SIZE; i++) {
+				arr.push([]);
+					for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+						arr[i][j] = rand(0, 100);
+					}
+			}
+		console.table(arr);
+		
+		var triangle = {
+		katetLeft: [],
+		katetBottom: arr[arr.length-1].slice(0, arr.length-1).reverse(),
+		hypotenuse: []
+		}				
+			for (var i = 0; i < ARR_SIZE; i++) {
+				for (var j = i; j <= i; j++) {
+					triangle.hypotenuse.push(arr[i][j]);
+				}
+			}
+			
+			for (var i = ARR_SIZE-2; i > 0; i--) {
+				triangle.katetLeft.push(arr[i][ARR_INSIDE_SIZE - arr[i].length]);
+			}
+			
+		var trianglePerimetr = triangle.hypotenuse.concat(triangle.katetBottom, triangle.katetLeft);
+			
+			console.log(trianglePerimetr); 
+
+	
+</script> 
+<p>---</p>
+</body>
+</html>
