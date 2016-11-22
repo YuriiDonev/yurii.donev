@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Начинаем учить JS</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+
+	<p> Здесь начало документа </p>
+		<!--   <script src="file1.js"></script> -->
+		
+		<script> 
+
+	// работает некорректно, не увеличивается интервал на последующих итерациях, голова поломалась
+		
+				for(var i = 0; i < 10; i++) {
+					(function(index) {
+					setTimeout(function() { console.log(index); }, 1000*i);
+					})(i);
+				}     
+			
+		
+		</script>
+		
+		<!-- <script async src="https://js.cx/hello/ads.js?speed=0"></script> -->
+		
+	
+	<p> Здесь конец документа </p>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -105,23 +105,112 @@ alert( arr ); // массив изменился: остались [3, 1]
 				}  */
 				
 				
+/* Анаграммы – слова, состоящие из одинакового количества одинаковых букв, но в разном порядке. Например:
+
+воз - зов
+киборг - гробик
+корсет - костер - сектор
+
+Напишите функцию aclean(arr), которая возвращает массив слов, очищенный от анаграмм.
+
+Например:
+
+var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
+
+alert( aclean(arr) ); // "воз,киборг,корсет" или "ЗОВ,гробик,сектор"
+
+Из каждой группы анаграмм должно остаться только одно слово, не важно какое. 
+
+		var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
+		
+		var obj = {};
+		
+		for (var i = 0; i < arr.length; i++) {
+		}   */
 		
 		
+/* Задача «Hello World» для функций :)
 
+Напишите функцию min(a,b), которая возвращает меньшее из чисел a,b.
 
+Пример вызовов:
 
-	
-	/*			var arr = [1, 2, 3, 4,];
-		var value = 3;
-		var notFound;
-			for (var i = 0; i < arr.length; i++) {
-				if (arr[i] === value) {
-					console.log(i); break;
-				} else console.log('-1');
+min(2, 5) == 2
+min(3, -1) == -1
+min(1, 1) == 1    */
+
+		/*	function min(a, b) {		
+				return (a < b) ? a : b;
 			}
-	*/	
 		
+		console.log(min(0, 150));  */
 		
+//		function pow(x, n) {		
+//			return Math.pow(x, n);	
+//		}
+//		console.log(pow(2, 8));
+		
+	/*	function pow (x, n) {
+			
+				var res = x;
+				
+				for (var i = 1; i < n; i++) {		
+					res = res * x;
+				}
+				return res;
+			}
+				console.log(pow(2, 10));  */
+						
+	/*		function makeCounter () {	
+				var currentCounter = 1;
+				
+					return function () {
+						return currentCounter++;
+					}
+				}
+				
+				var result = makeCounter();
+				var result2 = makeCounter();
+				
+				console.log(result());
+				console.log(result());
+				console.log(result());
+				console.log('-------');
+				console.log(result2());
+				console.log(result2());   */
+				
+				
+	/*			var counter = 10;
+				 
+				 function boom () {
+					console.log(counter--);
+					if (counter === 0) {
+						clearInterval(timerId);
+						console.log('BOOM!!!')
+					}
+				 }
+				 var timerId = setInterval (boom, 100);  */
+				 
+	
+				 
+				
+
+		//		for (var i = 0; i < 10; i++) {
+				
+		//			(function (index) { setTimeout(function() {console.log(index); }, 1000*i);})(i);
+		//		}
+
+		
+				for(var i = 0; i < 10; i++) {
+					(function(index) {
+					setTimeout(function() { console.log(index); }, 1000*i);
+					})(i);
+				}
+				 
+				 
+				 
+				
+			
 		
 		</script>
 		
