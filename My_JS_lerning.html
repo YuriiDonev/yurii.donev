@@ -191,21 +191,85 @@ min(1, 1) == 1    */
 				 }
 				 var timerId = setInterval (boom, 100);  */
 				 
-	
-				 
-				
-
-		//		for (var i = 0; i < 10; i++) {
-				
-		//			(function (index) { setTimeout(function() {console.log(index); }, 1000*i);})(i);
-		//		}
-
 		
-				for(var i = 0; i < 10; i++) {
+			/*	for(var i = 0; i < 10; i++) {
 					(function(index) {
-					setTimeout(function() { console.log(index); }, 1000*i);
+					setTimeout(function() { console.log(index); }, 1000*index);
 					})(i);
+				}    */
+				
+				
+		/*		function sumTo(n) {
+					debugger;
+					if (n > 1) {
+						return n + sumTo(n-1);
+					
+					} else {
+						return n;
+					}	
 				}
+				 
+				 var res = sumTo(3);
+				 console.log(res);  */
+
+				 
+/*	Создайте объект calculator с тремя методами:
+
+ read() запрашивает prompt два значения и сохраняет их как свойства объекта
+ sum() возвращает сумму этих двух значений
+ mul() возвращает произведение этих двух значений
+
+var calculator = {
+  ...ваш код...
+}
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() ); */
+
+	
+	
+	
+/*	
+	var calculator = {
+		
+		a: null,
+		b: null,
+		
+		read: function() {
+			this.a = +prompt('Введите число a:' );
+			this.b = +prompt('Введите число b:' );
+		},
+		sum: function() {
+		return this.a + this.b;
+		},
+		mul: function() {
+			return this.a * this.b;
+		}
+	}
+				 calculator.read();
+				 console.log(calculator.sum());
+				 console.log(calculator.mul());   */
+				 
+				 
+				 var ladder = {
+					
+					step: 0,
+					up: function() {
+						this.step++;
+						return this;
+					},
+					down: function() {
+						this.step--;
+						return this;
+					}
+				 
+				 
+				 
+				 
+				 }
+				 
+				 
+				 
 				 
 				 
 				 

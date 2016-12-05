@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>seaBattle</title>
+<meta charset="UTF-8" />
+</head>
+
+<body>
+<p>---</p>
+<script>
+	
+
+			
+/* Написать скрипт, который:
+1) Запрашивает ширину и высоту поля для «Морского боя»  +
+2) Создает двумерный массив c заданным размерами, в котором хранятся данные ячеек (field[5][3])  +
+3) Всем ячейкам присваивает значение - объект {chip: false, opened: false, msg: “missed!”}       +
+4) Содержит функции для задания и получения данных из поля:
+        putChip(5, 6); +
+        setMsg(7, 8, ’my message’); +
+        hit(9, 10); //должно выводиться сообщение о подбитии корабля, если попали +
+
+5) Ввод ошибочных данных (например, координат) обрабатывается выводом сообщений о некорректных данных (метод для показа собщений)
+      validate(3, 5); // возвращает true или false +
+
+6) Проверка наличия непотопленных кораблей
+        hasChips(); //возвращает true или false, если корабли остались или кончились. +
+
+7) Всё вышеперечисленное реализовать в виде объекта со свойствами и методами. +
+function getSeaBattle (size) {
+  var seabattle = {
+      field: …
+  };
+  /// magic
+  return seabattle;
+}
+
+var sb = getSeaBattle(10);
+sb.putChip(0,2);
+sb.putChip(1,4);
+sb.putChip(4,7);
+
+sb.hit(4,7);
+sb.hit(5,2);
+sb.hit(0,2);	 */
+			
+		
+			function getSeaBattle (size) {
+				var seabattle = {
+				field: [],
+				
+				putShip: function (x, y) {
+					this.field[x][y].ship = true;
+				},
+				setMsg: function (x, y, msg) {	
+					this.field[x][y].msg = msg;
+				},
+				hit: function (x, y) {
+					if (seabattle.field[x][y].ship == true) {
+						alert ('Попал!');
+						this.field[x][y].opened = true;
+					} else alert ('Мимо!');
+				},
+				validate: function (x, y) {
+					if (x > size || y > size || x < 0 || y < 0) {
+						alert ('Проверьте правильность данных');
+						return false;
+					}
+				},
+				hasShips: function () {
+					for (var i = 0; i < seabattle.field.length; i++) {
+						for (var j = 0; j < seabattle.field.length; j++) {
+							if (seabattle.field[i][j].ship == true) {
+								console.log ('корабли еще есть');
+								break;
+								return true;
+							} else return false;
+						}
+					}
+				}		
+			};
+									
+					for (var i = 0; i < size; i++) {
+						seabattle.field.push([]);
+							for (var j = 0; j < size; j++) {
+								seabattle.field[i][j] = {ship: false, opened: false, msg: 'missed'};
+							}
+					}
+					
+					
+					
+					
+					
+				
+				
+				return seabattle;
+			}
+
+				var sb = getSeaBattle(10);
+				
+				sb.validate(2, 6);
+				
+				sb.putShip(0, 0);
+				sb.putShip(0, 2);
+				
+				
+				sb.hit(4, 2);
+				sb.hit(0, 0);
+				
+				
+		
+				console.table(sb.field);
+				console.log(sb.field);
+				
+				sb.hasShips();
+				
+			
+
+  
+
+	
+</script> 
+<p>---</p>
+
+
+
+
+</body>
+</html>
