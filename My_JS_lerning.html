@@ -226,9 +226,7 @@ calculator.read();
 alert( calculator.sum() );
 alert( calculator.mul() ); */
 
-	
-	
-	
+
 /*	
 	var calculator = {
 		
@@ -251,24 +249,83 @@ alert( calculator.mul() ); */
 				 console.log(calculator.mul());   */
 				 
 				 
-				 var ladder = {
+/*Напишите функцию-конструктор Calculator, которая создает объект с тремя методами:
+
+    Метод read() запрашивает два значения при помощи prompt и запоминает их в свойствах объекта.
+    Метод sum() возвращает сумму запомненных свойств.
+    Метод mul() возвращает произведение запомненных свойств.
+
+Пример использования:
+
+var calculator = new Calculator();
+calculator.read();
+
+alert( "Сумма=" + calculator.sum() );
+alert( "Произведение=" + calculator.mul() );   */
+
+/*				function Calculator () {
+				
+					this.read = function () {
+						this.a = +prompt('Введите первое число', 0);
+						this.b = +prompt('Введите второе число', 0);
+					};
+					this.sum = function () {
+						return this.a + this.b;
+					};
+					this.mul = function () {
+						return this.a * this.b;
+					};
+				
+				}
+				  
+				  var calculator = new Calculator ();
+				  
+				  calculator.read();
+				  console.log(calculator.sum());
+				  console.log(calculator.mul());   */
+				  
+/*				 function Horse (name) {
 					
-					step: 0,
-					up: function() {
-						this.step++;
-						return this;
-					},
-					down: function() {
-						this.step--;
-						return this;
-					}
-				 
-				 
-				 
-				 
+					this.name = name;
+					this.ownRun = 0;
+					this.run = function (value) {
+						value = value || 0;
+						this.ownRun = ownRun + value;
+					};
 				 }
 				 
+				 var h1 = new Horse('Вялый');  */
 				 
+				 
+				 
+var user1 = {
+	name: 'Василий',
+	surname: 'Петрович'
+};
+
+var user2 = {
+	name: 'Сергей',
+	surname: 'Петрович'
+};
+
+
+function bind(self, fn) {
+	return function() {
+		// arguments = ['a', 'b']
+		return fn.apply(self, arguments);
+	};
+}
+
+function getFullName() {
+	return this.name + ' ' + this.surname;
+}
+
+// var get1 = bind(user1, getFullName);
+// var get2 = bind(user2, getFullName);
+
+				 
+				 
+				  
 				 
 				 
 				 

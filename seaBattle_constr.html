@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>seaBattle</title>
+<meta charset="UTF-8" />
+</head>
+
+<body>
+<p>---</p>
+<script>
+
+				function SeaBattle (size) {
+					
+					var sbSize = size;
+					
+					this.createField = function () {
+						this.field = [];
+						for (var i = 0; i < sbSize; i++) {
+							this.field.push([]);
+								for (var j = 0; j < sbSize; j++) {
+									this.field[i][j] = {ship: false, opened: false, msg: 'missed'};
+								}
+							}
+						}
+					this.getField = function () {
+						console.table(this.field);
+				}
+					this.putShip = function (x, y) {
+						this.field[x][y].ship = true;
+				}
+					this.setMsg = function (x, y, msg) {	
+						this.field[x][y].msg = msg;
+				}
+					this.hit = function (x, y) {
+					if (this.field[x][y].ship == true) {
+						alert ('Попал!');
+						this.field[x][y].opened = true;
+					} else alert ('Мимо!');
+				}
+					this.validate = function (x, y) {
+					if (x > sbSize || y > sbSize || x < 0 || y < 0) {
+						alert ('Проверьте правильность данных');
+						return false;
+					} else alert ('Все правильно');
+				}
+					this.hasShips = function () {
+						for (var i = 0; i < sbSize; i++) {
+							for (var j = 0; j < sbSize; j++) {
+								if (this.field[i][j].ship === true) {
+									var a = 'корабли еще есть';
+									alert (a);
+									break;
+									return true;
+								}
+							}
+								if (a === undefined) {
+								alert ('Кораблей нет');
+								return false;
+							}
+						}
+					}
+			}
+		
+		var sb = new SeaBattle(10);
+		sb.createField();
+		sb.putShip(0, 0);
+		sb.putShip(0, 3);
+		sb.setMsg(0,0,'попал!');
+		sb.hit(0, 3);
+		sb.validate(8, 2);
+		sb.hasShips();
+		sb.getField();
+
+
+	
+</script> 
+<p>---</p>
+
+
+
+
+</body>
+</html>
