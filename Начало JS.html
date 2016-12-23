@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Начало JavaScript</title>
+<meta charset="UTF-8" />
+</head>
+
+<body>
+<p>Делаем свой первый сайт с использованием JavaScript</p>
+<script>
+
+/*sumTo(1) = 1
+sumTo(2) = 2 + 1 = 3
+sumTo(3) = 3 + 2 + 1 = 6
+sumTo(4) = 4 + 3 + 2 + 1 = 10
+...
+sumTo(100) = 100 + 99 + ... + 2 + 1 = 5050  */
+
+/*
+function sumTo(n){
+
+var result = 0;
+	for (var i = 1; i <= n; i++) {
+	result = result + i;
+	}
+	return result;
+}
+
+alert(sumTo(2));  */
+/*
+var n = prompt('Введите число', 'Ваше число');
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+if (isNumeric(n)==true) {
+alert ('Вы ввели число');
+} else alert ('Вы ввели НЕ число'); */
+
+/*function getDecimal(num){
+//var num = prompt('Введите Ваше число', 'Введите здесь Ваше число:');
+var num = String(num);
+var a = num.indexOf('.', 0);
+return (+(0 + num.substring(a)));
+}
+alert( getDecimal(12.345) ); //0.345
+alert( getDecimal(1.2) ); // 0.2
+alert( getDecimal(-1.2) ); // 0.2  */
+/*
+По образцу из файла занятия номер 2.
+var a = 10;
+var b = 20;
+
+// Если А больше чем Б, то А умножить на 10, а Б не трогать.
+
+if (a > b) {
+   a = 10; // a = a  10;
+}
+Для трех перменных - самую большую умножить на 100, следующую по влеичине умножить на 10, оставшуюся не трогать.
+Для ЧЕТЫРЕХ перменных - самую большую умножить на 1000, следующую по величине умножить на 100, потом - на 10, оставшуюся не трогать.
+*/
+/*
+var a = 18;
+var b = 2;
+var c = 36;
+var d = 45;
+
+	function sortNumber(a, b)
+	{
+		return b - a;
+	}
+	var numbers = [a, b, c, d];
+	
+	numbers.sort(sortNumber);
+	
+	alert(numbers[0]*1000 + ' ' + numbers[1]*100 + ' ' + numbers[2]*10 + ' ' + numbers[3]); */
+
+/*	var str = 'Я самый ахуенный программер';
+	var target = 'самый';
+	var pos = 0;
+		while (true) {
+			var foundPos = str.indexOf(target, pos);
+		if (foundPos == -1) break;
+		alert(foundPos);
+		pos = foundPos+1;
+	}  */
+//Напишите функцию checkSpam(str), которая возвращает true, если строка str содержит „viagra“ или „XXX“, а иначе false.
+//Функция должна быть нечувствительна к регистру:
+//checkSpam('buy ViAgRA now') == true
+//checkSpam('free xxxxx') == true
+//checkSpam("innocent rabbit") == false
+	
+/* function checkSpam(str) {
+	var str;
+	str = str.toLowerCase(str);
+	if ((str.indexOf('viagra') != -1) || (str.indexOf('xxx') != -1)) {
+	return true;
+	} else return false;
+ }
+	alert (checkSpam('buy adfhsakjlfhdasl')); */
+	
+//  Правильно округление:
+//	var n = 3.456;
+//	alert( Math.round(n * 10)/10);
+	
+/*Напишите код, который:
+Запрашивает по очереди значения при помощи prompt и сохраняет их в массиве.
+Заканчивает ввод, как только посетитель введёт пустую строку, не число или нажмёт «Отмена».
+При этом ноль 0 не должен заканчивать ввод, это разрешённое число.
+Выводит сумму всех значений массива */
+/*
+var arr = [];
+	while (true) {
+		var string = prompt('Введите ваше чило', 'Введите здесь ваше число');
+		var number;
+		if (string == null || isNaN(string)) {
+		break;
+		} else arr.push(number = +string);
+	}
+		var sum = 0;
+			for(var i = 0; i < arr.length; i++){
+			sum += arr[i];
+			}
+		alert(sum); */
+/*		
+function rand (min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+var num1 = rand(0, 100);
+var num2 = rand(100, 999);
+
+console.log(num1);
+console.log(num2);
+
+// 1. создать пустой массив
+// 2. написать цикл от 0 до 10
+// 3. в каждой итерации получить случайное число от 0 до 100,
+// 		используя пример выше
+// 4. это случайное число запушить в массив.
+// 5. сделать console.log() массива
+// 6. Соблюдать правила форматирования кода!!!!!!
+var arr = [];
+for (var i = 0; i < 10; i++) {
+	var n = rand(0, 100); // записали случайной число в переменную n
+	arr.push( n ); // положили это число в массив
+}
+console.log(arr);
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+// var arr = [90,80,70,60,50,40,30,20,10];
+
+/*
+for (var i = arr.length - 1; i >= 0;i--){
+	console.log( arr[i] );
+}
+
+// ДЗ
+// 1. создать массив на 30 элементов, заполнить случайными числами,
+// причем четные элементы заполнить числами больше нуля
+// а нечетные - меньше нуля. (подсказка - % это остаток от деления)
+// [-33, 55, -9, 48, -2, 1]
+// 2. Этот массив пройти циклом и вывести каждый пятый элемент  */
+/*	
+	function rand (min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+	var arr = [];
+	
+	for (var i = 0; i < 30; i++) {	
+			if (i%2) {
+				var even = rand(-100, -1);
+				arr.push(even);
+			} else {
+				var odd = rand(0, 100);
+				arr.push(odd);
+			}
+	}
+	for (var i = 0; i < arr.length; i=i+5) {
+		console.log(arr[i]);
+	} */
+	
+/*В объекте есть свойство className, которое содержит список «классов» – слов, разделенных пробелом:
+var obj = {
+  className: 'open menu'
+}
+Создайте функцию addClass(obj, cls), которая добавляет в список класс cls, но только если его там еще нет:
+addClass(obj, 'new'); // obj.className='open menu new'
+addClass(obj, 'open'); // без изменений (класс уже существует)
+addClass(obj, 'me'); // obj.className='open menu new me'
+alert( obj.className ); // "open menu new me"
+P.S. Ваша функция не должна добавлять лишних пробелов. */
+/*
+	var obj = {
+		className: 'open menu'
+	}
+	function addClass(obj, cls) {
+		
+		//var classes = obj.className ? obj.className.split(' ') : [];	
+		
+		if (obj.className) {
+			var classes = obj.className.split(' ');
+		} else var classes = [];
+	
+		for (var i = 0; i < classes.length; i++) {	
+			if (classes[i] == cls) return; // класс уже есть
+		}		
+		classes.push(cls);
+		obj.className = classes.join(' ');
+	}
+	addClass(obj, 'new');
+	addClass(obj, 'open');
+	addClass(obj, 'me');
+	alert(obj.className);
+*/
+
+/*
+	function rand (min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+	var arr = [];
+	var ARR_SIZE = 10;
+	var ARR_INSIDE_SIZE = 5;
+	
+		for (var i = 0; i < ARR_SIZE; i++) {
+			arr.push([i]);
+				for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+					arr[i][j] = rand (0, 100);  // заполняем массив
+				}
+		}		
+				console.table(arr); // выводим массив arr в виде таблицы
+	var arrTop = [];
+		for (var i = 0; i < 1; i++) {
+			for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+				arrTop.push(arr[i][j]);  // получаем верхний ряд массива
+			}
+		}
+	var arrRight = [];
+		for (var i = 1; i < ARR_SIZE-1; i++ ) {
+			for (var j = ARR_INSIDE_SIZE-1; j < ARR_INSIDE_SIZE; j++) {
+				arrRight.push(arr[i][j]); // получаем правую часть массива без верхнего и нижнего значения
+			}
+		}
+	var arrBottom = [];
+		for (var i = ARR_SIZE-1; i < ARR_SIZE; i++) {
+			for (var j = ARR_INSIDE_SIZE-1; j >= 0; j--) {
+				arrBottom.push(arr[i][j]); // получаем нижний ряд массива справа-налево
+			}
+		}
+	var arrLeft = [];
+		for (var i = ARR_SIZE-2; i > 0; i--) {
+			for (var j = 0; j < 1; j++) {
+				arrLeft.push(arr[i][j]); // получаем левый ряд снизу вверх без нижнего и верхнего значения
+			}
+		}
+	console.log(arrTop.concat(arrRight, arrBottom, arrLeft));  */
+	
+	//-----------------------------------------------------------------------------------------------
+/*		
+	function rand (min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+	
+	var arr = [];
+	var ARR_SIZE = 10;
+	var ARR_INSIDE_SIZE = 5;
+	
+	for (var i = 0; i < ARR_SIZE; i++) {
+		arr.push([i]);
+			for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+				arr[i][j] = rand (0, 100);
+			}
+	}
+	console.table(arr); // вывели массив в виде таблицы
+	
+	var arrTop = [];
+		for (var i = 0; i < 1; i++ ) {
+			for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+				arrTop.push(arr[i][j]); // получили верхний ряд массива
+			}
+		}
+	var arrRight = [];
+		for (var i = 1; i < ARR_SIZE-1; i++) {
+			for (var j = ARR_INSIDE_SIZE-1; j < ARR_INSIDE_SIZE; j++ ) {
+				arrRight.push(arr[i][j]); // получили правый ряд массива сверху вниз
+			}
+		}
+	var arrBottom = [];
+		for (var i = ARR_SIZE-1; i < ARR_SIZE; i++) {
+			for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+				arrBottom.push(arr[i][j]); // получили нижний ряд массива
+			}
+		}
+	var arrLeft = [];
+		for (var i = 1; i < ARR_SIZE-1; i++) {
+			for (var j = 0; j < 1; j++) {
+				arrLeft.push(arr[i][j]); // получили левый ряд массива сверху вниз
+			}
+		}
+	console.log(arrTop.concat(arrRight, arrBottom.reverse(), arrLeft.reverse()));    */
+	
+/* Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».
+
+То есть, дефисы удаляются, а все слова после них получают заглавную букву.
+
+Например:
+
+camelize("background-color") == 'backgroundColor';
+camelize("list-style-image") == 'listStyleImage';
+camelize("-webkit-transition") == 'WebkitTransition';
+Такая функция полезна при работе с CSS.
+
+P.S. Вам пригодятся методы строк charAt, split и toUpperCase.
+		function camelize(str) {
+			var str;
+			var arr = str.split('-');
+			
+				for (var i = 1; i < arr.length; i++) {
+					arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+				}
+			return arr.join('');
+		}
+		console.log( camelize("-webkit-transition"));   */
+/*		
+У объекта есть свойство className, которое хранит список «классов» – слов, разделенных пробелами:
+var obj = {
+  className: 'open menu'
+};
+Напишите функцию removeClass(obj, cls), которая удаляет класс cls, если он есть:
+
+removeClass(obj, 'open'); // obj.className='menu'
+removeClass(obj, 'blabla'); // без изменений (нет такого класса)
+P.S. Дополнительное усложнение. Функция должна корректно обрабатывать дублирование класса в строке:
+
+obj = {
+  className: 'my menu menu'
+};
+removeClass(obj, 'menu');
+alert( obj.className ); // 'my'
+Лишних пробелов после функции образовываться не должно.
+	var obj = {
+		className: 'my menu menu'
+	};		
+	function removeClass(obj, cls) {	
+		var cls;
+		var str;
+		var arr = [];
+			for (key in obj) {
+				str = obj[key];
+			}
+		arr = str.split(' ');
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] === cls) {
+					delete arr[i];
+				}
+			}
+			str = arr.join(' ');
+			return obj.className = str;
+		}		
+			removeClass(obj, 'menu');
+			alert(obj.className);      */
+/*	
+	function rand (min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+		
+		var arr = [];
+		var ARR_SIZE = 10;
+		var ARR_INSIDE_SIZE = 10;
+		
+			for (var i = 0; i < ARR_SIZE; i++) {
+				arr.push([]);
+					for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+						arr[i][j] = rand(0, 100);
+					}
+			}
+		console.table(arr);
+		
+		var triangle = {
+		katetLeft: [],
+		katetBottom: arr[arr.length-1].slice(0, arr.length-1).reverse(),
+		hypotenuse: []
+		}
+					
+			for (var i = 0; i < ARR_SIZE; i++) {
+				for (var j = i; j <= i; j++) {
+					triangle.hypotenuse.push(arr[i][j]);
+				}
+			}
+			
+			for (var i = 1; i < ARR_SIZE-1; i++) {
+				for (var j = 0; j < 1; j++) {
+					triangle.katetLeft.push(arr[i][j]);
+				}
+			}
+		
+		var trianglePerimetr = triangle.hypotenuse.concat(triangle.katetBottom, triangle.katetLeft.reverse());
+
+		console.log(trianglePerimetr);   */
+				
+	/*	function rand (min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+		
+		var arr = [];
+		var ARR_SIZE = 10;
+		var ARR_INSIDE_SIZE = 10;
+		
+			for (var i = 0; i < ARR_SIZE; i++) {
+				arr.push([]);
+					for (var j = 0; j < ARR_INSIDE_SIZE; j++) {
+						arr[i][j] = rand(0, 100);
+					}
+			}
+		console.table(arr);
+		
+		var triangle = {
+		katetLeft: [],
+		katetBottom: arr[arr.length-1].slice(0, arr.length-1).reverse(),
+		hypotenuse: []
+		}				
+			for (var i = 0; i < ARR_SIZE; i++) {
+				for (var j = i; j <= i; j++) {
+					triangle.hypotenuse.push(arr[i][j]);
+				}
+			}
+			
+			for (var i = ARR_SIZE-2; i > 0; i--) {
+				triangle.katetLeft.push(arr[i][ARR_INSIDE_SIZE - arr[i].length]);
+			}
+			
+		var trianglePerimetr = triangle.hypotenuse.concat(triangle.katetBottom, triangle.katetLeft);
+			
+			console.log(trianglePerimetr); */
+			
+			
+/*Как отсортировать массив чисел в обратном порядке?
+
+var arr = [5, 2, 1, -10, 8];
+// отсортируйте?
+alert( arr ); // 8, 5, 2, 1, -10 
+
+		var arr = [5, 2, 1, -10, 8];
+		
+		function compareNumericReversed(a, b) {
+			return b - a;	
+		}	
+		alert(arr.sort(compareNumericReversed)); */
+		
+/*Есть массив строк arr. Создайте массив arrSorted – из тех же элементов, но отсортированный.
+
+Исходный массив не должен меняться.
+
+var arr = ["HTML", "JavaScript", "CSS"];
+
+// ... ваш код ...
+
+alert( arrSorted ); // CSS, HTML, JavaScript
+alert( arr ); // HTML, JavaScript, CSS (без изменений)
+Постарайтесь сделать код как можно короче.
+
+	var arr = ["HTML", "JavaScript", "CSS"];	
+	var arrSorted = arr.slice().sort();
+	alert (arrSorted);
+	alert (arr); */
+
+/* Напишите код, который отсортирует массив объектов people по полю age.
+Например:
+var vasya = { name: "Вася", age: 23 };
+var masha = { name: "Маша", age: 18 };
+var vovochka = { name: "Вовочка", age: 6 };
+
+var people = [ vasya , masha , vovochka ];
+... ваш код ...
+// теперь people: [vovochka, masha, vasya]
+alert(people[0].age) // 6
+Выведите список имён в массиве после сортировки.
+
+	var vasya = { name: "Вася", age: 23 };
+	var masha = { name: "Маша", age: 18 };
+	var vovochka = { name: "Вовочка", age: 6 };
+		var people = [ vasya , masha , vovochka ];
+				function compareNumeric(personA, personB) {
+			return personA.age - personB.age;	
+		}	
+			people.sort(compareNumeric);		
+			console.log(people);
+			console.log(people[0]); */
+			
+/*Анаграммы – слова, состоящие из одинакового количества одинаковых букв, но в разном порядке.
+Напишите функцию aclean(arr), которая возвращает массив слов, очищенный от анаграмм.
+Например:
+
+var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
+
+alert( aclean(arr) ); // "воз,киборг,корсет" или "ЗОВ,гробик,сектор"
+Из каждой группы анаграмм должно остаться только одно слово, не важно какое. 
+	function aclean (arr) {		
+		var obj = {};	
+		var resultArr = [];	
+		for (var i = 0; i < arr.length; i++) {	
+			obj[arr[i].split('').sort().join().toLowerCase()] = arr[i];
+		}		
+		for (key in obj) {
+			resultArr.push(obj[key]);
+		}
+			 return resultArr;
+	}
+		var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];	
+	console.log(aclean(arr));  */
+	
+	 
+/*		function makeCounter () {
+			var currentCount = 1;	
+				return function () {
+					return currentCount++;
+				}
+				
+		}
+		
+		var counter = makeCounter();
+		var counter2 = makeCounter();
+		
+		console.log(counter());
+		console.log(counter());
+		console.log(counter2());
+		console.log(counter2());
+		console.log(counter2());    */
+	
+
+// Исходная задача
+/*
+	var arr = [];
+		for (var i = 0; i < 10; i++) {
+			arr.push(function() {
+				console.log(index);
+			});
+		}
+*/
+// Решение!
+
+/*		var arr = [];
+			for (var i = 0; i < 10; i++) {
+			(function(index) {
+				arr.push(function() {
+					console.log(index);
+			});
+		})(i);
+	} */
+	
+	
+/* Решение через let */
+	/*
+	var arr = [];
+		for (let i = 0; i < 10; i++) {
+			arr.push(function() { console.log(index); });
+		}
+
+/* ДОМАШКА*/
+/*
+ * 1. Пофиксить вывод i (по аналогии с предыдущей задачей);
+ * 2. Сделать так, чтобы каждый таймаут срабатывал с разницей
+ * 		в одну секунду. (первый - 1с, второй - 2с, третий - 3с и т.д.)
+ */
+
+	//	for (var i = 0; i < 10; i++) {
+			
+	//		setTimeout(function() { console.log(i); }, 1000);
+	//	}
+		
+	//	for (var i = 0; i < 10; i++) {
+			
+	//	 setTimeout((function(index) {console.log(index);})(i), 1000);
+	//	}
+		
+	/*	
+		function countMe() {
+			var currentCount = 1;
+				return function countInside () {  // ф-ция countInside сначала ищет перем currentCount внутри себя, не находит и ищет в ОВ countMe
+					return currentCount++;
+				}
+		}
+		
+		var result = countMe(); // записываем в result - function countInside () { return currentCount++; }
+		var result2 = countMe(); 
+		
+		console.log(result()); // запуск ф-ции и создание нового объекта переменных ОВ или LE = {currentCount: 1}
+		console.log(result()); // LE = {currentCount: 2}
+		console.log(result()); // LE = {currentCount: 3}
+		
+		console.log(result2()); // новый запуск ф-ции и создание нового объекта LE = {currentCount: 1}
+		console.log(result2()); // LE = {currentCount: 2}
+		*/
+		
+	/*	
+			var currentCount = 1;
+				
+				function countMe() {
+					return function countInside () {  // ф-ция countInside сначала ищет перем currentCount внутри себя, не находит и ищет в ОВ countMe
+						return currentCount++;
+				}
+		}
+		
+		var result = countMe(); // записываем в result - function countInside () { return currentCount++; }
+		var result2 = countMe(); 
+		
+		console.log(result()); // запуск ф-ции и создание нового объекта переменных ОВ или LE = {currentCount: 1}
+		console.log(result()); // LE = {currentCount: 2}
+		console.log(result()); // LE = {currentCount: 3}
+		
+		console.log(result2()); // новый запуск ф-ции и создание нового объекта LE = {currentCount: 3}
+		console.log(result2()); // LE = {currentCount: 2}   */
+		
+//--------------------------------------------------------------------
+	/*	
+			var a = 1;
+				function getFunc() {
+				
+				var a = 2;
+
+			var func = function() { alert(a); };
+
+				return func;
+				}
+
+			getFunc()(); // 2, из LexicalEnvironment функции getFunc.
+			//Ну смотри, getFunc() данный вызов функции вернет результат в виде другой функции func и чтобы сразу вызвать и данную функцию добавили новые скобки :)
+*/
+	/*		Напишите функцию sum, которая работает так: sum(a)(b) = a+b.
+			Да, именно так, через двойные скобки (это не опечатка). Например:
+			sum(1)(2) = 3
+			sum(5)(-1) = 4 */
+			
+		/*	function sum(a) {
+			
+				return function (b) {
+					return a + b;
+				}
+			}	
+				console.log(sum(2)(4)); */
+//----------------------------------------------------------------				
+//			Вызов makeBuffer должен возвращать такую функцию buffer, которая при вызове buffer(value)
+//          добавляет значение в некоторое внутреннее хранилище,
+//          а при вызове без аргументов buffer() – возвращает его.
+//          function makeBuffer() { /* ваш код */ }
+
+//			var buffer = makeBuffer();
+
+			// добавить значения к буферу
+//			buffer('Замыкания');
+//			buffer(' Использовать');
+//			buffer(' Нужно!');
+
+			// получить текущее значение
+//			alert( buffer() ); // Замыкания Использовать Нужно!
+						
+	/*		function makeBuffer () {		
+				var currentBuffer = '';		
+				function buffer (value) {
+				
+					if (arguments.length == 0) {
+						return currentBuffer;
+					} else {
+						return currentBuffer = currentBuffer + value;
+					}
+			}
+			buffer.clear = function() {
+				currentBuffer = '';
+			}
+			return buffer;
+		};
+		var buffer = makeBuffer();
+		buffer('Замыкания');
+		buffer(' Использовать');
+		buffer(' Нужно');
+		buffer.clear();
+		console.log(buffer()); */
+		
+/*У нас есть массив объектов:
+
+var users = [{
+  name: "Вася",
+  surname: 'Иванов',
+  age: 20
+}, {
+  name: "Петя",
+  surname: 'Чапаев',
+  age: 25
+}, {
+  name: "Маша",
+  surname: 'Медведева',
+  age: 18
+}];
+Обычно сортировка по нужному полю происходит так:
+
+// по полю name (Вася, Маша, Петя)
+users.sort(function(a, b) {
+  return a.name > b.name ? 1 : -1;
+});
+
+// по полю age  (Маша, Вася, Петя)
+users.sort(function(a, b) {
+  return a.age > b.age ? 1 : -1;
+});
+Мы хотели бы упростить синтаксис до одной строки, вот так:
+
+users.sort(byField('name'));
+users.forEach(function(user) {
+  alert( user.name );
+}); // Вася, Маша, Петя
+
+users.sort(byField('age'));
+users.forEach(function(user) {
+  alert( user.name );
+}); // Маша, Вася, Петя
+
+То есть, вместо того, чтобы каждый раз писать в sort function... – будем использовать byField(...)
+Напишите функцию byField(field), которую можно использовать в sort для сравнения объектов по полю field,
+чтобы пример выше заработал. */
+
+/*
+	var users = [{
+	name: "Вася",
+	surname: 'Иванов',
+	age: 20
+	}, {
+	name: "Петя",
+	surname: 'Чапаев',
+	age: 25
+	}, {
+	name: "Маша",
+	surname: 'Медведева',
+	age: 18
+	}];
+		
+		function byField (field) {
+	
+			users.sort(function(a, b) {
+				return a[field] > b[field] ? 1 : -1;
+			});
+		}
+		
+		users.sort(byField('name'));
+		users.forEach(function(user) {
+			console.log( user.name );
+		}); // Вася, Маша, Петя   
+		
+		users.sort(byField('age'));
+			users.forEach(function(user) {
+		console.log( user.name );
+	}); // Маша, Вася, Петя   */
+	
+/*	var ladder = {
+		step: 0,
+		up: function() { // вверх по лестнице
+			this.step++;
+			return this;
+		},
+		down: function() { // вниз по лестнице
+			this.step--;
+			return this;
+		},
+		showStep: function() { // вывести текущую ступеньку
+			alert( this.step );
+			return this;
+		}
+	};
+			
+			
+			
+			//Модифицируйте код методов объекта, чтобы вызовы можно было делать цепочкой, вот так:
+
+			ladder.up().up().down().up().down().showStep().up().up().showStep();  */
+			
+			
+			//var now = new Date();
+			
+			//console.log(now);
+			
+/*
+sum(1)(2) == 3; // 1 + 2
+sum(1)(2)(3) == 6; // 1 + 2 + 3
+sum(5)(-1)(2) == 6
+sum(6)(-1)(-2)(-3) == 0
+sum(0)(1)(2)(3)(4)(5) == 15			 
+
+		function sum(a) {
+		
+			var currentSum = a;
+			
+				function func (b) {
+					currentSum = currentSum + b;
+						return func;
+				}
+			func.toString = function () {
+				return currentSum;
+			};
+			return func;
+		}
+		
+			console.log(sum(0)(1)(2)(3)(4)(5));   */
+			
+			
+	/*		function User (name) {
+			
+				this.name = name;
+				
+				this.sayHi = function () {
+					console.log( this.name + ' Здорова' );
+				}	
+			}
+			
+			var alesha = new User('Алеша');
+			
+			alesha.sayHi(); */
+			
+/* Напишите функцию-конструктор Calculator, которая создает объект с тремя методами:
+
+Метод read() запрашивает два значения при помощи prompt и запоминает их в свойствах объекта.
+Метод sum() возвращает сумму запомненных свойств.
+Метод mul() возвращает произведение запомненных свойств.
+Пример использования:
+
+var calculator = new Calculator();
+calculator.read();
+
+alert( "Сумма=" + calculator.sum() );
+alert( "Произведение=" + calculator.mul() ); 
+
+		function Calculator () {
+			this.read = function () {
+				this.a = +prompt('Введите первое число', 0);
+				this.b = +prompt('Введите второе число', 0);
+			};	
+			this.sum = function () {
+				return this.a + this.b;
+			}
+			this.mul = function () {
+				return this.a * this.b;
+			}
+		}
+			
+			var calculator = new Calculator();
+			
+			calculator.read();
+			console.log(calculator.sum());
+			console.log(calculator.mul()); */
+			
+/* Напишите функцию-конструктор Accumulator(startingValue). Объекты, которые она создает, должны хранить текущую сумму и прибавлять к ней то, что вводит посетитель.
+
+Более формально, объект должен:
+
+Хранить текущее значение в своём свойстве value. Начальное значение свойства value ставится конструктором равным startingValue.
+Метод read() вызывает prompt, принимает число и прибавляет его к свойству value.
+Таким образом, свойство value является текущей суммой всего, что ввел посетитель при вызовах метода read(), с учетом начального значения startingValue.
+
+Ниже вы можете посмотреть работу кода:
+
+var accumulator = new Accumulator(1); // начальное значение 1
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+alert( accumulator.value ); // выведет текущее значение  
+
+	function Accumulator(startingValue) {
+		
+		this.startingValue = startingValue;
+		
+		this.read = function () {
+			
+			this.value = +prompt('Введите число', 0) + this.startingValue;
+		
+		}
+	}
+			
+		var accumulator = new Accumulator(1);
+			
+			accumulator.read();
+			console.log(accumulator.value);  */
+		
+	/*	function sum (a) {
+		
+			var currentSum = a;
+			
+				function innerFunction (b) {
+				
+					currentSum = currentSum + b;
+						
+						return innerFunction;
+				
+				}
+		
+			innerFunction.toString = function () {
+				return currentSum;
+			}
+			
+			return innerFunction;
+		}
+		
+		console.log(sum(2)(4)(5)); */
+		
+		
+	/*		var user = {
+				firstName: 'Вася',
+				lastName: 'Пупкин'
+			}
+			
+		Object.defineProperty ( user, 'fullName', {
+		
+			get: function() { return this.firstName + ' ' + this.lastName },
+			
+			set: function (value) {
+				var split = value.split(' ');
+				this.firstName = split[0];
+				this.lastName = split[1];
+			}
+		
+		} );
+		
+			console.log(user.fullName);
+			
+			user.fullName = 'Петя Иванов';
+			
+			console.log(user.firstName);
+			console.log(user.lastName);  */
+			
+/* Вам попал в руки код объекта User, который хранит имя и фамилию в свойстве this.fullName:
+
+function User(fullName) {
+  this.fullName = fullName;
+}
+
+var vasya = new User("Василий Попкин");
+Имя и фамилия всегда разделяются пробелом.
+
+Сделайте, чтобы были доступны свойства firstName и lastName, причём не только на чтение, но и на запись, вот так:
+
+var vasya = new User("Василий Попкин");
+
+// чтение firstName/lastName
+alert( vasya.firstName ); // Василий
+alert( vasya.lastName ); // Попкин
+
+// запись в lastName
+vasya.lastName = 'Сидоров';
+
+alert( vasya.fullName ); // Василий Сидоров
+Важно: в этой задаче fullName должно остаться свойством, а firstName/lastName – реализованы через get/set.
+Лишнее дублирование здесь ни к чему. */
+
+	/*	function User(fullName) {
+			this.fullName = fullName;		
+				
+			Object.defineProperties (this, {
+				firstName: {
+					get: function () {
+						return this.fullName.split(' ')[0];
+						},
+					set: function (newFirstName) {
+						this.fullName = newFirstName + this.lastName;
+					}
+				},
+				lastName: {
+					get: function () {
+						return this.fullName.split(' ')[1];
+					},
+					set: function (newLastName) {
+						this.fullName = this.firstName + newLastName;
+					}
+				}
+			});
+		}
+		var vasya = new User("Василий Попкин");
+	
+		console.log(vasya.firstName);
+		console.log(vasya.lastName);
+		
+		vasya.lastName = 'Сидоров';
+		
+		console.log(vasya.lastName);
+		console.log(vasya.fullName); */
+		
+		
+/*		var user = {
+  firstName: "Василий",
+  surname: "Петров",
+  patronym: "Иванович"
+};
+
+function showFullName(firstPart, lastPart) {
+  console.log( this[firstPart] + " " + this[lastPart] );
+}
+
+// f.call(контекст, аргумент1, аргумент2, ...)
+showFullName.call(user, 'firstName', 'surname') // "Василий Петров"
+showFullName.call(user, 'firstName', 'patronym') // "Василий Иванович"   */
+
+/*
+	var user = {
+	name: 'Vasya',
+	surname: 'Ivanov',
+	patronym: 'Sergeevich',
+	age: 40
+	};
+		
+		function showFullName (first, second) {
+			return this[first] + ' ' + this[second];
+		}
+		
+		function count (a, b, c) {
+			return this.age + a + b + c;
+		}
+		
+		var arr = [10, 20, 30];
+		
+		console.log(showFullName.call(user, 'name', 'surname'));
+		
+		console.log(count.call(user, 5, 2, 3));
+		console.log(count.apply(user, arr));
+		
+		
+			var bound = count.bind(user);
+			
+			console.log(bound(5, 1, 2)); */
+			
+	/*			
+				function SuperCar (milage) {
+						
+					this.totalMilage = milage;
+					
+					this.setMilage = function(milage2) {
+						this.totalMilage = this.totalMilage + milage2;
+					}
+					
+					this.getMilage = function() {
+						return this.totalMilage;
+					}
+				}
+			
+			var ferrari = new SuperCar(1000);
+			var lambo = new SuperCar(0);
+			
+			console.log(ferrari.totalMilage);
+			ferrari.setMilage(2000);
+			console.log(ferrari.getMilage());
+			console.log(lambo.getMilage());
+			lambo.setMilage(16000);
+			console.log(lambo.getMilage());
+		
+				setMilage.call(ferrari, 8000);
+				console.log(ferrari.getMilage());   */
+				
+	/*			function SuperCar (milage) {
+				
+					var self = this;
+						
+					self.totalMilage = milage;
+					
+					self.setMilage = function(milage2) {
+						self.totalMilage = self.totalMilage + milage2;
+					}
+					
+					self.getMilage = function() {
+						return notBurn();
+					}
+					
+					function notBurn() {
+						return 'Не выджигеривай!!!, и так уже наездил: ' + self.totalMilage;
+					}
+					
+				}
+				
+			var ferrari = new SuperCar(1000);
+			var lambo = new SuperCar(0);
+		
+				ferrari.setMilage(8000);
+				console.log(ferrari.getMilage());
+				console.log(lambo.getMilage());     */
+				
+				
+	/*			var obj = {	
+					number: 2
+				};
+				var obj1 = {
+					number: 4
+				};
+				
+				function addToThis (a) {
+					return this.number + a;
+				}
+				
+				console.log(addToThis.call(obj, 5));
+				console.log(addToThis.call(obj1, 5));  */
+
+					
+					//var totalMilage = 0;
+	/*				Horse.prototype.total = 0;
+				
+					function Horse(name) {
+						
+						this.name = name;
+						this.milage = 0;
+						this.run = function (km) {
+							this.milage += km;
+							//totalMilage += km;
+							this.constructor.prototype.total += km;
+						};
+					}
+					
+					
+						
+					var h1 = new Horse ('Гондон');
+					var h2 = new Horse ('Уебан');
+					var h3 = new Horse ('Пипа');
+					
+					h1.run(80);
+					h2.run(30);
+					h3.run(55);
+					console.log(Horse.prototype.total);    */
+					
+/*					
+у лошади появляется свойство «усталость»
+когда лошадь пробегает 1км, у нее усталость увеличивается на 1 елиницу. когда усталость достигает 10,
+лошадь останавливается и отдыхает 3 секунды (использовать setTimeout), после того как лошадь отдохнула,
+ее усталость обнуляется и лошадь бежит дальше, пока не добежит, либо пока усталость опять не станет равна 10. 
+Пример - бежим 31 км.
+10 км пробежали
+отдых 3 сек, усталость = 0; осталось бежать - 21 км
+еще 10 км пробежали
+отдых 3 сек, усталость = 0; осталось бежать - 11 км
+еще 10 км пробежали
+отдых 3 сек, усталость = 0; осталось бежать - 1 км
+пробежали оставшийся 1 км.
+остаточная усталость у лошади остается равной 1 единице
+
+соответственно, если завтавить лошадь бежать опять, то до ближайшего отдыха она пробежит 9 км   */
+
+
+/*
+/*		var timeout = 0;
+
+		for(var i = 0; i < 3; i++) {
+
+			setTimeout((function (){
+					return function() {
+						console.log('Таймаут');
+					}})(i), timeout);
+			timeout += 1000;
+		};   */
+		
+
+
+			var horseFatigue = 0;
+			
+			function run (km) {
+				if (km > 10) {
+				
+					console.log ('Пробежали 10 км и отдыхаем 3 сек');
+
+					return run(km - 10);
+					
+				}
+				else {
+				horseFatigue = horseFatigue + km;
+				if (horseFatigue > 10) {
+					console.log ('Пробежали 10 км и отдыхаем 3 сек');
+					horseFatigue = horseFatigue - 10;
+					console.log ('Пробежали ' + horseFatigue + ' км');
+				} else {
+				console.log ('Пробежали ' + km + ' км');
+				return horseFatigue;
+				}
+			}
+		}
+		
+					run(32);
+					console.log('усталость = ' + horseFatigue);
+					
+					run (5);
+					console.log('усталость = ' + horseFatigue);
+					
+					run (12);
+					console.log('усталость = ' + horseFatigue);
+
+
+		/*		(function loops(){
+				setTimeout(function(){
+				console.log('test');
+				loops(); // рекурсия
+				}, 1000);
+				})();			*/		
+					
+					
+					
+	/*			for(var i = 0; i < 3; i++) {
+					(function(index) {
+					setTimeout(function() { console.log(index); }, 1000*i);
+					})(i);
+				}
+				console.log('привет1');
+				console.log('привет2');
+				console.log('привет3');    */
+				
+	/*			function throttle(func, ms) {
+
+					var isThrottled = false,
+						savedArgs,
+						savedThis;
+
+					function wrapper() {
+
+						if (isThrottled) { // (2)
+							savedArgs = arguments;
+							savedThis = this;
+								return;
+							}
+
+						func.apply(this, arguments); // (1)
+
+					isThrottled = true;
+
+						setTimeout(function() {
+							isThrottled = false; // (3)
+						if (savedArgs) {
+							wrapper.apply(savedThis, savedArgs);
+							savedArgs = savedThis = null;
+						}
+					}, ms);
+				}
+
+				return wrapper;
+			}  */
+				
+
+				
+				
+						
+
+	
+</script> 
+<p>После алерта выведется это сообщение</p>
+
+
+
+
+</body>
+</html>

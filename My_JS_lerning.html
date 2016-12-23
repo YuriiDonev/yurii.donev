@@ -296,7 +296,7 @@ alert( "Произведение=" + calculator.mul() );   */
 				 
 				 var h1 = new Horse('Вялый');  */
 				 
-				 
+/*				 
 				 
 var user1 = {
 	name: 'Василий',
@@ -321,7 +321,34 @@ function getFullName() {
 }
 
 // var get1 = bind(user1, getFullName);
-// var get2 = bind(user2, getFullName);
+// var get2 = bind(user2, getFullName);     */
+
+
+				function Horse (name) {
+					this.name = name;
+					var distance = 0;
+					this.run = function (km) {
+					km = km || 0;
+					distance += km;
+					this.constructor.prototype.summeryDistance += km;
+				}
+						this.getDistance = function () { return distance;};
+						this.getSummDistance = function () { return this.constructor.prototype.summeryDistance;};
+					}
+			
+			Horse.prototype.summeryDistance = 0;
+			
+			var horse1 = new Horse("Быстрая");
+			var horse2 = new Horse("Медленная");
+			
+			horse1.run(100);
+			horse2.run(20);
+			
+			console.log(horse1.getDistance());
+			console.log(horse2.getDistance());
+			console.log(horse1.getSummDistance());
+
+
 
 				 
 				 
