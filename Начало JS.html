@@ -1145,7 +1145,7 @@ showFullName.call(user, 'firstName', 'patronym') // "Василий Иванов
 		};   */
 		
 
-
+/*
 			var horseFatigue = 0;
 			
 			function run (km) {
@@ -1177,56 +1177,47 @@ showFullName.call(user, 'firstName', 'patronym') // "Василий Иванов
 					
 					run (12);
 					console.log('усталость = ' + horseFatigue);
-
-
-		/*		(function loops(){
-				setTimeout(function(){
-				console.log('test');
-				loops(); // рекурсия
-				}, 1000);
-				})();			*/		
-					
-					
-					
-	/*			for(var i = 0; i < 3; i++) {
-					(function(index) {
-					setTimeout(function() { console.log(index); }, 1000*i);
-					})(i);
-				}
-				console.log('привет1');
-				console.log('привет2');
-				console.log('привет3');    */
+		*/
+		
+			/*	function Car (mark) {
+					this.mark = mark;
+					this.ride = function () {
+						console.log(this.mark + ' проезжает');
+					}
+				} 
 				
-	/*			function throttle(func, ms) {
-
-					var isThrottled = false,
-						savedArgs,
-						savedThis;
-
-					function wrapper() {
-
-						if (isThrottled) { // (2)
-							savedArgs = arguments;
-							savedThis = this;
-								return;
-							}
-
-						func.apply(this, arguments); // (1)
-
-					isThrottled = true;
-
-						setTimeout(function() {
-							isThrottled = false; // (3)
-						if (savedArgs) {
-							wrapper.apply(savedThis, savedArgs);
-							savedArgs = savedThis = null;
-						}
-					}, ms);
-				}
-
-				return wrapper;
-			}  */
 				
+				//function SuperCar (mark) {
+				//	this.mark = mark;
+				//}
+				
+				//var car = new Car('Гавно');
+					
+				//	SuperCar.prototype = car;
+					
+				//var lambo = new SuperCar('Lamborgini');
+				
+				//var lada = new car.constructor('Жигули');
+				
+				//lada.ride();   */
+				
+				var div = document.querySelector('#my-div');
+div.className = 'my-super-class';
+div.className += ' super-active';
+div.className += ' active';
+
+var arr = div.className.split(' ');
+
+
+var example = document.querySelector('#simple-example');
+var str = '<ul>\n';
+for (var i = 0; i < 10; i++) {
+	str += '\t<li>' + (i + 1) + '</li>\n';
+}
+str += '</ul>';
+example.innerHTML = str;
+	
+
 
 				
 				
