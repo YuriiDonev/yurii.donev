@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task_Table</title>
+<meta charset="UTF-8" />
+</head>
+
+<body>
+
+		<div id = 'my-table'> Табличка </div>
+		
+
+<script>
+
+				var table = document.createElement('table');
+				var rows = 10;
+				var columns = 10;
+				
+					for (var i = 0; i < rows; i++) {
+							var tr = document.createElement('tr');
+							table.appendChild(tr);
+						for (var j = 0; j < columns; j++) {
+							var td = document.createElement('td');
+							td.style.border = '1px solid black';
+							td.textContent = 'i = ' + i + ' j = ' + j;
+							if (i%2 !== 0 && j%2 === 0 ) {
+								td.style.backgroundColor = 'blue';
+							}
+							if (i%2 === 0 && j%2 !== 0 ) {
+								td.style.backgroundColor = 'blue';
+							}
+							tr.appendChild(td);
+						}
+					}
+			
+			document.body.appendChild(table);
+			
+
+</script> 
+
+</body>
+</html>
