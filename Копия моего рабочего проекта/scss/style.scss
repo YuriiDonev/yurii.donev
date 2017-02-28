@@ -1,0 +1,94 @@
+h4 {
+	color: #111e47;
+	font: normal 500 14px/10px Arial;
+}
+
+.row:hover {
+	background-color: #a7bce8;
+}
+button:hover {
+	cursor: pointer;
+}
+
+.main {
+	display: flex;
+	flex-direction: row;
+}
+.name_image {
+	margin-top: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.imageContainer {
+	width: 80px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+}
+img {
+	max-width: 80px;
+	max-height: 80px;
+	border-radius: 40px;
+}
+
+.disactive {
+	display: none;
+}
+
+.columnGlobal {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+.Delete_column_button {
+	height: 18px;
+}
+.Add_column_button {
+	width: 25px;
+}
+
+#Add_column {
+	margin-top: 90px;
+	width: 25px;
+	height: 25px;
+	border-radius: 20px;
+}
+#Delete_column {
+	margin-left: 135px;
+	width: 25px;
+	height: 25px;
+	border-radius: 20px;
+}
+.Add_Delete_Row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+#add_row {
+	width: 25px;
+	height: 25px;
+	border-radius: 20px;
+	margin-left: 90px;
+	margin-top: 4px;
+}
+#delete_row {
+	width: 25px;
+	height: 25px;
+	border-radius: 20px;
+	margin-right: 90px;
+	margin-top: 4px;
+}
+
+.row {
+	background-color: #d7dfef;
+	width: 280px;
+	height: 165px;
+	margin: 10px;
+	border-radius: 10px;
+	position: relative;
+}
