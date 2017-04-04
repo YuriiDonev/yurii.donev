@@ -1,0 +1,7 @@
+git status
+git add . - добавить всё из папки
+git commit -m ‘мой супер коммит’
+git status
+git remote add origin ССЫЛКА_НА_РЕПОЗИТОРИЙ
+git pull origin master - получить изменения с сервера
+git push origin master -  отправить изменения на сервер

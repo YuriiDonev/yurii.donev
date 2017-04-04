@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Task_for_REACT</title>
+</head>
+
+<body>
+			
+
+
+  
+  <style>
+
+		div {
+			border: 1px solid red;
+			width: 200px;
+			height: 100px;
+			border-radius: 3px;
+			text-align: center;
+			margin-bottom: 20px;
+			margin-left: 10px;
+		}
+
+		
+  
+  </style>
+  
+  <script>
+				
+				var table = createElement('table');
+				document.body.appendChild(table);
+				
+				function addTr (idNum) {
+					var tr = createElement('tr');
+					tr.setAttribute('id', idNum);
+					table.appendChild(tr);
+				}
+				
+				function addTd (id, searchTr) {
+					var td = createElement('td');
+					var div = createElement('div');
+					div.setAttribute('id', 'mainDiv');
+					td.setAttribute('id', id);
+						var rightButton = createElement('button', 'rightButton');
+						rightButton.textContent = 'кнопка справа';
+						div.appendChild(rightButton);
+						var bottomButton = createElement('button', 'bottomButton');
+						bottomButton.textContent = 'кнопка снизу';
+						div.appendChild(bottomButton);
+					td.appendChild(div);
+					var myTr = document.getElementById(searchTr);
+					myTr.appendChild(td);
+				}
+					
+					addTr('tr1');
+					addTd('td1', 'tr1');
+					
+				document.addEventListener("click", function (event) {
+					var current = event.target;
+					if (current.tagName !== 'BUTTON') return;
+					if (current.className === 'rightButton') {
+							
+							var parentId = current.parentElement.id;
+							addTr('parentId'+1);
+							addTd('id'+1, 'parentId'+1);
+						
+						console.log('сработала кнопка справа');
+					}
+					if (current.className === 'bottomButton') {
+						console.log('сработала кнопка снизу');
+					}
+				});
+				
+				
+				
+
+			//		addTr('tr1');
+			//		addTd('один', 'td1', 'tr1');
+			//		addTd('два', 'td2', 'tr1');
+			//		addTd('три', 'td3', 'tr1');
+			//		addTr('tr2');
+			//		addTd('четыре', 'td4', 'tr2');
+			//		addTd('пять', 'td5', 'tr2');
+			//		addTd('шесть', 'td6', 'tr2');
+			//		addTr('tr3');
+			//		addTd('семь', 'td7', 'tr3');
+					
+					
+	/*		
+				var divTable = createElement('table');
+				document.body.appendChild(divTable);
+
+				
+				for (var i = 0; i <= 0; i++) {
+					var tr = createElement('tr');
+					divTable.appendChild(tr);
+						for (var j = 0; j <= 0; j++) {
+							var td = createElement('td');
+							var div = createElement('div');
+							td.appendChild(div);
+								var rightButton = createElement('button', 'rightButton');
+								rightButton.textContent = 'кнопка справа';
+								div.appendChild(rightButton);
+								var bottomButton = createElement('button', 'bottomButton');
+								bottomButton.textContent = 'кнопка снизу';
+								div.appendChild(bottomButton);
+							tr.appendChild(td);
+						}
+					}
+				
+				document.addEventListener("click", function (event) {
+					var current = event.target;
+					if (current.tagName !== 'BUTTON') return;
+					if (current.className === 'rightButton') {
+						addTd();
+						console.log('сработала кнопка справа');
+					}
+					if (current.className === 'bottomButton') {
+						addTr()
+						console.log('сработала кнопка снизу');
+					}
+				});
+				
+				
+				
+			function addTd () {
+					var td = createElement('td');
+					var div = createElement('div');
+					td.appendChild(div);
+					tr.appendChild(td);
+				}
+			function addTr () {
+					var tr = createElement('tr');
+					var div = createElement('div');
+					//td.appendChild(div);
+					tr.appendChild(td);
+					divTable.appendChild(tr);
+				}
+				
+				
+				
+				
+				
+				
+		/*		var divMain = createElement('div', 'mainClass');
+				divMain.textContent = 'Главный див';
+				divMain.style = 'float: left';
+				document.body.appendChild(divMain);
+				
+				var rightButton = createElement('button', 'rightButton');
+				rightButton.textContent = 'right';
+				divMain.appendChild(rightButton);
+				
+				var bottomButton = createElement('button', 'bottomButton');
+				bottomButton.textContent = 'bottom';
+				divMain.appendChild(bottomButton);
+				
+				
+				document.addEventListener("click", function (event) {
+					var current = event.target;
+					if (current.tagName !== 'BUTTON') return;
+					if (current.classList.className === 'rightButton') {
+						var rightDiv = createElement('div', 'rightDiv');
+						rightDiv.style = 'float: right';
+						document.body.appendChild(rightDiv);
+					} else {
+						var bottomDiv = createElement('div', 'bottomDiv');
+						bottomDiv.style = 'float: left';
+						document.body.appendChild(bottomDiv);
+					}
+				});
+	*/			
+				
+				
+				function createElement (type, className) {	
+					type = type || 'div';	
+					var element = document.createElement(type);
+					if (className) {
+						element.classList.add(className);
+					}
+					return element;
+				}
+  
+  
+	/*		function randomInt (min, max) {
+				return Math.round(min - 0.5 + Math.random() * (max - min + 1));
+			}
+			
+			function createColor (min, max) {
+				var color = 'rgb(' + randomInt(min, max) + ',' + randomInt(min, max) + ',' + randomInt(min, max) + ')';
+				return color;
+			}
+			
+			var TABLE_SIZE = 10;
+			
+			var table = document.createElement('table');
+			document.body.appendChild(table);
+			
+				for (var i = 0; i < TABLE_SIZE; i++) {
+					var tr = document.createElement('tr');
+					table.appendChild(tr);
+						for (var j = 0; j < TABLE_SIZE; j++) {
+							var td = document.createElement('td');
+							//td.textContent = i + ' ' + j;
+							td.style.backgroundColor = createColor(1, 255);
+							tr.appendChild(td);
+						}
+				}
+					
+					table.style.marginLeft = document.documentElement.clientWidth*0.25 + 'px';
+					table.style.marginTop = document.documentElement.clientWidth*0.1 + 'px';
+		*/
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.custom-select {
+			display: inline-block;
+			width: 100px;
+			position: relative;
+		}
+		.custom-select .button {
+			cursor: pointer;
+			padding: 0 10px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+		}
+		.custom-select .dropdown {
+			position: absolute;
+			top: 22px;
+			left: 5px;
+			border: 2px solid #ddd;
+			display: none;
+			/*padding: 15px;*/
+		}
+		.custom-select .dropdown.active{
+			display: block;
+		}
+		.custom-select .dropdown li {
+			padding: 0 15px;
+			border-bottom: 1px dotted silver;
+			cursor: pointer;
+			background-color: #fff;
+		}
+		.custom-select .dropdown li:hover {
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+		<div id="native-select-wrapper"></div>
+		<div id="custom-select-wrapper">
+			<!-- <div class="custom-select">
+				<div class="button">Каждый</div>
+				<ul class="dropdown">
+					<li data-my-awesome-value="1">Охотник</li>
+					<li>блаблабла</li>
+				</ul>
+			</div> -->
+		</div>
+
+	<script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+

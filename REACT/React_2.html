@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React_2</title>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+		
+		<style>
+			.red {
+				background-color: red;
+			}
+			.blue {
+				background-color: blue;
+			}
+
+
+		</style>
+
+	<div id="container"></div>
+
+<script type="text/babel">
+
+				
+	/*			var MyButton = React.createClass({
+
+					getInitialState: function () {
+						return {color: 'red'};
+					},
+					
+					toggleClass: function () {
+						if (this.state.color ==='red') {
+						this.setState({color: 'blue'})
+					} else this.setState({color: 'red'})
+				},
+
+					render: function () {
+						return (
+								<div>
+									<button className={this.state.color} onClick={this.toggleClass}>Great button</button>
+
+								</div>
+							);
+					}
+				});
+
+					ReactDOM.render(<MyButton/>, document.getElementById('container'));
+	*/
+
+				 class Clock extends React.Component {
+				 	constructor(props) {
+				 		super(props);
+				 		this.state = {element: ['default']};
+						this.addElement = this.addElement.bind(this);
+				 	}
+			//	 	componentDidMount() {
+			//	 		this.timerID = setInterval(() => this.tick(), 1000);
+			//	 	}
+			//	 	componentWillUnmount() {
+			//	 		clearInterval(this.timerID);
+			//	 	}
+
+					
+				 	addElement(event) {
+				 		this.setState({ element: this.state.element.push(event.target.value) });
+						console.log('мы ввели: ' + event.target.value);
+				 	}
+						
+				 	render () {
+						console.log(this.state.element);
+				 		return (
+				 			<div>
+								<input type="text" onChange = {this.addElement} />
+								<button onClick={this.addElement}>Add Element</button>
+				 				<h2>Maaaan</h2>
+				 				<h3>It is my Element</h3>
+				 			</div>
+				 		);
+					}
+				}
+					
+				 	ReactDOM.render(<Clock />, document.getElementById('container'));
+
+
+	// <input type="text" ref={(input) => {this.whatToPush = input}} />
+
+
+</script>
+	
+</body>
+</html>

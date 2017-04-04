@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dropdown_Pannel</title>
+<meta charset="UTF-8" />
+</head>
+
+<body>
+
+	<div id="custom-select-wrapper"></div>
+
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.custom-select {
+			display: inline-block;
+			width: 100px;
+			position: relative;
+		}
+		.custom-select .button {
+			cursor: pointer;
+			padding: 0 10px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+		}
+		.custom-select .dropdown {
+			position: absolute;
+			top: 22px;
+			left: 5px;
+			border: 2px solid #ddd;
+			display: none;
+			/*padding: 15px;*/
+		}
+		.custom-select .dropdown.active{
+			display: block;
+		}
+		.custom-select .dropdown li {
+			padding: 0 15px;
+			border-bottom: 1px dotted silver;
+			cursor: pointer;
+			background-color: #fff;
+		}
+		.custom-select .dropdown li:hover {
+			background-color: #ddd;
+		}
+	</style>
+
+			
+			
+
+<script>
+			var cars = [
+				{number: 0, value: 'Honda'},
+				{number: 1, value: 'Toyota'},
+				{number: 2, value: 'Nissan'},
+				{number: 3, value: 'Suzuki'},
+				{number: 4, value: 'Lexus'},	
+			];
+				
+				function createCustomDropdown(data, wrapper) {
+					var customSelect = document.createElement('div');
+					customSelect.setAttribute('class', 'custom-select');
+					var button = document.createElement('div');
+					button.setAttribute('class', 'button');
+					button.textContent = data[0].value;
+					button.dataset.value = data[0].number;
+					
+					var dropdown = document.createElement('ul');
+					dropdown.setAttribute('class', 'dropdown');
+						for (var i = 0; i < data.length; i++) {
+							var li = document.createElement('li');
+							li.textContent = data[i].value;
+							li.dataset.value = data[i].number;
+							dropdown.appendChild(li);
+						}
+
+					customSelect.appendChild(button);
+					customSelect.appendChild(dropdown);
+					wrapper.appendChild(customSelect);
+					
+					button.addEventListener("click", function () {
+						dropdown.classList.toggle('active');
+					});
+					
+					dropdown.addEventListener("click", function(event) {
+						if (event.target.tagName !== 'LI') return;
+						var index = +event.target.dataset.value;
+						button.textContent = data[index].value;
+						button.dataset.value = data[index].number;
+						event.currentTarget.classList.remove('active');
+					});
+					
+					document.addEventListener("click", function (event) {
+						var current = event.target;
+						while (current && current.className.indexOf('custom-select') === -1) {	
+							current = current.parentElement;
+						}
+						if (current === null) {
+							dropdown.classList.remove('active');
+						}
+					});
+				}
+				
+				createCustomDropdown(cars, document.querySelector('#custom-select-wrapper'));
+				
+				
+
+</script> 
+
+</body>
+</html>

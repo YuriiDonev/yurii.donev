@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>seaBattle</title>
+<!--<link rel="stylesheet" href="styles.css" />  -->
+
+</head>
+
+<body>
+	<style>
+	table {
+		border-spacing: 0px;
+
+	}
+
+
+	td {
+	width: 30px;
+	height: 30px;
+	border: solid 1px;
+	}
+	td:hover {
+		border: 1px solid red;
+	}
+	
+	</style>
+
+
+
+
+<script>
+
+
+
+				function SeaBattle (size) {
+					
+					var sbSize = size;
+			
+					this.createField = function () {
+						this.field = [];
+						for (var i = 0; i < sbSize; i++) {
+							this.field.push([]);
+								for (var j = 0; j < sbSize; j++) {
+									this.field[i][j] = {ship: false, opened: false, msg: 'missed', border: false};
+								}
+							}
+						}
+					this.getField = function () {
+					
+						var table = document.createElement('table');
+
+						console.table(this.field);
+						var arr = [];
+						
+						
+						function soundClick() {
+							var audio = new Audio(); // Создаём новый элемент Audio
+							audio.src = '17_53.mp3'; // Указываем путь к звуку "клика"
+							audio.autoplay = true; // Автоматически запускаем
+						}
+						function soundClick1() {
+							var audio = new Audio(); // Создаём новый элемент Audio
+							audio.src = 'bath1.mp3'; // Указываем путь к звуку "клика"
+							audio.autoplay = true; // Автоматически запускаем
+						}
+
+							for (var i = 0; i < sbSize; i++) {
+								arr.push([]);
+								var tr = document.createElement('tr');
+								table.appendChild(tr);
+									for (var j = 0; j < sbSize; j++) {
+										arr[i][j] = this.field[i][j].ship;
+									var td = document.createElement('td');
+									td.style.backgroundColor = '#D8F2ED';
+									if (this.field[i][j].ship === true) {
+										td.style.backgroundColor = '#22A4E6'
+										td.addEventListener('click', soundClick);
+									} else {
+										td.addEventListener('click', soundClick1);
+									}
+									tr.appendChild(td);
+									}
+							}
+							console.table(arr);
+							document.body.appendChild(table);
+				}
+					this.putShip = function (x, y) {
+
+						this.field[x][y].ship = true;
+
+				}
+				////////////////////////////////////////////////////////////
+					this.putShipAuto = function() {
+					
+				// Размещение 4-х палубного корабля ---- НАЧАЛО ---------------------		
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+						var rand = rand(0, 101);
+						if (rand <=50) {
+				// ------ строим корабль вниз ---------------------------
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+						var x = rand(0, 10);
+						var y = rand(0, 7);
+						this.field[y][x].ship = true;
+							for (var i = 1; i <= 3; i++) {
+								this.field[y+i][x].ship = true;
+							}
+								for (var i = 0; i <= 3; i++) {
+									if (x !== 9) {
+										this.field[y+i][x+1].border = true;
+									}
+									if (x !== 0) {
+										this.field[y+i][x-1].border = true;
+									}
+									if (y !== 0) {
+										this.field[y-1][x].border = true;
+										}
+									if (x !== 9 && y !== 0) {
+										this.field[y-1][x+1].border = true;
+									}
+									if (x!==0 && y!==0) {
+										this.field[y-1][x-1].border = true;
+									}
+									if (y !== 6 && x !==9) {
+										this.field[y+4][x+1].border = true;
+									}
+									if (y !== 6 && x !== 0) {
+										this.field[y+4][x-1].border = true;
+										}
+									if (y !== 6) {
+										this.field[y+4][x].border = true;
+									}
+								}
+							
+						} else if (rand > 50) {
+
+			// ------- строим корабль вправо -------------------------
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+						var x = rand(0, 7);
+						var y = rand(0, 10);
+						this.field[y][x].ship = true;
+							for (var i = 1; i <= 3; i++) {
+								this.field[y][x+i].ship = true;
+							}
+								for (var i = 0; i <= 3; i++) {
+									if (y !== 9) {
+										this.field[y+1][x+i].border = true;
+									}
+									if (y !== 0) {
+										this.field[y-1][x+i].border = true;
+									}
+									if (x !== 0) {
+										this.field[y][x-1].border = true;
+										}
+									if (y !== 9 && x !== 0) {
+										this.field[y+1][x-1].border = true;
+									}
+									if (y!==0 && x!==0) {
+										this.field[y-1][x-1].border = true;
+									}
+									if (x !== 6 && y !==9) {
+										this.field[y+1][x+4].border = true;
+									}
+									if (y !== 0 && x !== 6) {
+										this.field[y-1][x+4].border = true;
+										}
+									if (x !== 6) {
+										this.field[y][x+4].border = true;
+									}
+								}				
+							}
+	// Размещение 4-х палубного корабля ---- КОНЕЦ ---------------------	
+							
+			// Размещение 3-х палубного корабля 2 штуки ---- НАЧАЛО ---------------------		
+					
+					for (var j = 0; j < 2; j++) {
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+						var rand1 = rand(0, 101);
+						if (rand1 <= 50) {
+				// ------ строим корабль вниз ---------------------------
+				do {
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+					var a = 0;
+						var x1 = rand(0, 10);
+						var y1 = rand(0, 8);
+							if (this.field[y1][x1].border === false && this.field[y1+1][x1].border === false && this.field[y1+2][x1].border === false
+							 && this.field[y1][x1].ship === false && this.field[y1+1][x1].ship === false && this.field[y1+2][x1].ship === false) {
+							
+							this.field[y1][x1].ship = true;
+
+							for (var i = 1; i <= 2; i++) {
+								this.field[y1+i][x1].ship = true;
+							}
+								for (var i = 0; i <= 2; i++) {
+									if (x1 !== 9) {
+										this.field[y1+i][x1+1].border = true;
+									}
+									if (x1 !== 0) {
+										this.field[y1+i][x1-1].border = true;
+									}
+									if (y1 !== 0) {
+										this.field[y1-1][x1].border = true;
+										}
+									if (x1 !== 9 && y1 !== 0) {
+										this.field[y1-1][x1+1].border = true;
+									}
+									if (x1!==0 && y1!==0) {
+										this.field[y1-1][x1-1].border = true;
+									}
+									if (y1 !== 7 && x1 !==9) {
+										this.field[y1+3][x1+1].border = true;
+									}
+									if (y1 !== 7 && x1 !== 0) {
+										this.field[y1+3][x1-1].border = true;
+										}
+									if (y1 !== 7) {
+										this.field[y1+3][x1].border = true;
+									}
+								}
+								a++;
+							}
+						} while (a === 0);
+							
+							
+						} else if (rand1 > 50) {
+
+			// ------- строим корабль вправо -------------------------
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+					do {
+						var b = 0;
+						var x2 = rand(0, 8);;
+						var y2 = rand(0, 10);
+						if (this.field[y2][x2].border === false && this.field[y2][x2+1].border === false && this.field[y2][x2+2].border === false
+							 && this.field[y2][x2].ship === false && this.field[y2][x2+2].ship === false && this.field[y2][x2+2].ship === false) {
+					
+						this.field[y2][x2].ship = true;
+							for (var i = 1; i <= 2; i++) {
+								this.field[y2][x2+i].ship = true;
+							}
+								for (var i = 0; i <= 2; i++) {
+									if (y2 !== 9) {
+										this.field[y2+1][x2+i].border = true;
+									}
+									if (y2 !== 0) {
+										this.field[y2-1][x2+i].border = true;
+									}
+									if (x2 !== 0) {
+										this.field[y2][x2-1].border = true;
+										}
+									if (y2 !== 9 && x2 !== 0) {
+										this.field[y2+1][x2-1].border = true;
+									}
+									if (y2!==0 && x2!==0) {
+										this.field[y2-1][x2-1].border = true;
+									}
+									if (x2 !== 7 && y2 !==9) {
+										this.field[y2+1][x2+3].border = true;
+									}
+									if (y2 !== 0 && x2 !== 7) {
+										this.field[y2-1][x2+3].border = true;
+										}
+									if (x2 !== 7) {
+										this.field[y2][x2+3].border = true;
+									}
+								}
+							b++;
+							}
+						} while (b === 0);		
+					}
+				}
+		// Размещение 3-х палубного корабля 2 штуки ----  КОНЕЦ ---------------------	
+
+			// Размещение 2-х палубного корабля 3 штуки ---- НАЧАЛО ---------------------		
+					
+					for (var j = 0; j < 3; j++) {
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+						var rand1 = rand(0, 101);
+						if (rand1 <= 50) {
+				// ------ строим корабль вниз ---------------------------
+				do {
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+					var a = 0;
+						var x1 = rand(0, 10);
+						var y1 = rand(0, 9);
+							if (this.field[y1][x1].border === false && this.field[y1+1][x1].border === false
+							 && this.field[y1][x1].ship === false && this.field[y1+1][x1].ship === false ) {
+							
+							this.field[y1][x1].ship = true;
+
+							for (var i = 1; i <= 1; i++) {
+								this.field[y1+i][x1].ship = true;
+							}
+								for (var i = 0; i <= 1; i++) {
+									if (x1 !== 9) {
+										this.field[y1+i][x1+1].border = true;
+									}
+									if (x1 !== 0) {
+										this.field[y1+i][x1-1].border = true;
+									}
+									if (y1 !== 0) {
+										this.field[y1-1][x1].border = true;
+										}
+									if (x1 !== 9 && y1 !== 0) {
+										this.field[y1-1][x1+1].border = true;
+									}
+									if (x1!==0 && y1!==0) {
+										this.field[y1-1][x1-1].border = true;
+									}
+									if (y1 !== 8 && x1 !==9) {
+										this.field[y1+2][x1+1].border = true;
+									}
+									if (y1 !== 8 && x1 !== 0) {
+										this.field[y1+2][x1-1].border = true;
+										}
+									if (y1 !== 8) {
+										this.field[y1+2][x1].border = true;
+									}
+								}
+								a++;
+							}
+						} while (a === 0);
+										
+						} else if (rand1 > 50) {
+
+			// ------- строим корабль вправо -------------------------
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+					do {
+						var b = 0;
+						var x2 = rand(0, 9);
+						var y2 = rand(0, 10);
+						if (this.field[y2][x2].border === false && this.field[y2][x2+1].border === false 
+							 && this.field[y2][x2].ship === false && this.field[y2][x2+1].ship === false) {
+					
+						this.field[y2][x2].ship = true;
+							for (var i = 1; i <= 1; i++) {
+								this.field[y2][x2+i].ship = true;
+							}
+								for (var i = 0; i <= 1; i++) {
+									if (y2 !== 9) {
+										this.field[y2+1][x2+i].border = true;
+									}
+									if (y2 !== 0) {
+										this.field[y2-1][x2+i].border = true;
+									}
+									if (x2 !== 0) {
+										this.field[y2][x2-1].border = true;
+										}
+									if (y2 !== 9 && x2 !== 0) {
+										this.field[y2+1][x2-1].border = true;
+									}
+									if (y2!==0 && x2!==0) {
+										this.field[y2-1][x2-1].border = true;
+									}
+									if (x2 !== 8 && y2 !==9) {
+										this.field[y2+1][x2+2].border = true;
+									}
+									if (y2 !== 0 && x2 !== 8) {
+										this.field[y2-1][x2+2].border = true;
+										}
+									if (x2 !== 8) {
+										this.field[y2][x2+2].border = true;
+									}
+								}
+							b++;
+							}
+						} while (b === 0);		
+					}
+				}
+		// Размещение 2-х палубного корабля 3 штуки ----  КОНЕЦ ---------------------
+				
+			// Размещение 1-палубного корабля 4 штуки ---- НАЧАЛО ---------------------
+				
+			for (var j = 0; j < 4; j++) {
+				do {
+						function rand (min, max) {
+							return Math.floor(Math.random() * (max - min)) + min;
+						}
+					var a = 0;
+						var x1 = rand(0, 10);
+						var y1 = rand(0, 10);
+							if (this.field[y1][x1].border === false && this.field[y1][x1].ship === false ) {
+							
+							this.field[y1][x1].ship = true;
+
+									if (x1 !== 9) {
+										this.field[y1][x1+1].border = true;
+									}
+									if (x1 !== 0) {
+										this.field[y1][x1-1].border = true;
+									}
+									if (y1 !== 0) {
+										this.field[y1-1][x1].border = true;
+										}
+									if (x1 !== 9 && y1 !== 0) {
+										this.field[y1-1][x1+1].border = true;
+									}
+									if (x1!==0 && y1!==0) {
+										this.field[y1-1][x1-1].border = true;
+									}
+									if (y1 !== 9 && x1 !==9) {
+										this.field[y1+1][x1+1].border = true;
+									}
+									if (y1 !== 9 && x1 !== 0) {
+										this.field[y1+1][x1-1].border = true;
+										}
+									if (y1 !== 9) {
+										this.field[y1+1][x1].border = true;
+									}
+								a++;
+							}
+						} while (a === 0);
+					}
+				// Размещение 1-палубного корабля 4 штуки ---- КОНЕЦ ---------------------
+				}
+			}		
+			////////////////////////////////////////////////////////////////////////	
+				
+					this.setMsg = function (x, y, msg) {	
+						this.field[x][y].msg = msg;
+				}
+					this.hit = function (x, y) {
+					if (this.field[x][y].ship == true) {
+						alert ('Попал!');
+						this.field[x][y].opened = true;
+					} else alert ('Мимо!');
+				}
+					this.validate = function (x, y) {
+					if (x > sbSize || y > sbSize || x < 0 || y < 0) {
+						alert ('Проверьте правильность данных');
+						return false;
+					} else alert ('Все правильно');
+				}
+					this.hasShips = function () {
+						for (var i = 0; i < sbSize; i++) {
+							for (var j = 0; j < sbSize; j++) {
+								if (this.field[i][j].ship === true) {
+									var a = 'корабли еще есть';
+									alert (a);
+									break;
+									return true;
+								}
+							}
+								if (a === undefined) {
+								alert ('Кораблей нет');
+								return false;
+							}
+						}
+					}
+			
+		
+		var sb = new SeaBattle(10);
+		sb.createField();
+		sb.putShipAuto();
+		sb.getField();
+
+
+	
+</script> 
+
+
+</body>
+</html>
